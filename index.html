@@ -48,16 +48,15 @@
         <h1>Projects</h1>
         <div class="project-subheader">
             <p id="project-subtitle"> Interested in my projects? Explore below! </p>
-            <div class="filter">
-                <button class="filterBtn" onclick="event.preventDefault(); filterSelection('all')">All</button>
+            <div class="btnContainer">
+                <button class="filterBtn active" onclick="event.preventDefault(); filterSelection('all')">All</button>
                 <button class="filterBtn" onclick="event.preventDefault(); filterSelection('frontend')">HTML, CSS, JavaScript</button>
                 <button class="filterBtn" onclick="event.preventDefault(); filterSelection('python')">Python</button>
                 <button class="filterBtn" onclick="event.preventDefault(); filterSelection('java')">Java</button>
-                <button class="filterBtn" onclick="event.preventDefault(); filterSelection('raspberrypi')">Raspberry Pi<button>
+                <button class="filterBtn" onClick="event.preventDefault(); filterSelection('raspberrypi')">Raspberry Pi</button>
                 <button class="filterBtn" onclick="event.preventDefault(); filterSelection('design')">UX/UI Design</button>
             </div>
         </div>
-
 
         <div class="filter-container">
             <div class="filterDiv all"></div>
@@ -99,7 +98,7 @@
     </section>
 
     <!-- Footer -->
-    <section id="footer">
+    <footer id="footer">
         <div class="about">
             <div class="about-container">
                 <div class="left">
@@ -109,8 +108,7 @@
                 <div class="right">
                     <h2> About </h2>
                     <p> Hey! I'm Gloria, a 4th year computer science student at the University of North Carolina at Greensboro (a.k.a an *almost* certified computer nerd). 
-                        I love to code and build new things, and have a background in global marketing.
-                        Outside of career and academics, I enjoy reading and writing! </p>
+                        I love to code and build new things, and have a background in global marketing. </p>
                     <!-- <div class="animation">
                         <div class="stickman">
                             <div class="upper-body">
@@ -138,7 +136,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    <footer id="footer">
 
     <script src="index.js" defer></script>
 </body>
