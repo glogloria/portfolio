@@ -146,6 +146,7 @@ nav {
 
 .linkedin-button {
     background-color: #fbe2c1;
+    border-radius: 4px;
     color: #ff2828;
 }
 
@@ -155,6 +156,7 @@ a.linkedin-button:hover {
 
 .github-button {
     background-color: #ff2828;
+    border-radius: 4px;
     max-height: 100%;
 }
 
@@ -195,13 +197,13 @@ a.github-button:hover {
     grid-auto-flow: column;
     grid-auto-columns: 215px;
     gap: 20px;
-    border-width: 0px;
     font-family: "Roboto Mono", monospace;
     font-size: large;
 }
 
 .filterBtn {
     background-color: #fbe2c1;
+    border-radius: 4px;
     font-size: large;
 }
 
@@ -263,6 +265,10 @@ a.github-button:hover {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     width: 300px;
     overflow: hidden;
+}
+
+.box-shadow { /*Box shddow class for hovered project cards*/
+box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
 }
 
 .project-card img {
