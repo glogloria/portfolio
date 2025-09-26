@@ -15,6 +15,15 @@ html, body {
     scroll-behavior: smooth;
 }
 
+footer {
+    background-image: url('./assets/website-background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+
 /* Fonts */
 
 .chewy-regular {
@@ -46,7 +55,8 @@ html, body {
 }
 
 .header.scrolled {
-  background-image: linear-gradient(to right, rgba(235, 75, 63, 0.5), rgba(240, 148, 91, 0.5));}
+  background-image: linear-gradient(to right, rgba(235, 75, 63, 0.5), rgba(240, 148, 91, 0.5));
+}
 
 .header.scrolled p {
     color: rgb(237, 205, 205);
@@ -80,7 +90,7 @@ nav {
 #home {
     display: flex;
     height: 100vh;
-    background-image: linear-gradient(to right, #eb4b3f, #f0945b);
+    background-image: url('./assets/website-background.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -104,7 +114,7 @@ nav {
 }
 
 .introduction p {
-    font-family: "Roboto Mono", monospace;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 38px;
     font-weight: 10px;
     margin-top: 0;
@@ -180,48 +190,11 @@ a.github-button:hover {
     gap: 20px;
 }
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
-    z-index: 1;
-}
-
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-.dropdown-menu a {
-    display: flex;
-    flex-direction: column;
-    text-align: start;
-    color: black;
-    font-family: "Roboto Mono", monospace;
-}
-
-.dropdown-menu a:hover {
-    text-decoration: underline black;
-}
-
-.dropdown-menu a.active { /* Active class for cliked filters*/
-    font-weight: bold;
-}
-
-
-.filter {
+.btnContainer {
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: 200px;
+    grid-auto-columns: 215px;
     gap: 20px;
-
     border-width: 0px;
     font-family: "Roboto Mono", monospace;
     font-size: large;
@@ -229,10 +202,20 @@ a.github-button:hover {
 
 .filterBtn {
     background-color: #fbe2c1;
+    font-size: large;
 }
 
-.filter:hover {
+.filterBtn.active {
+    font-weight: bold;
+}
+
+.filterBtn:hover {
     text-decoration: underline black;
+    cursor: pointer;
+}
+
+.filterBtn.active {
+    font-weight: bolder;
 }
 
 .filterDiv {
@@ -350,7 +333,6 @@ a.github-button:hover {
     display: flex;
     place-content: center;
     height: 50vh;
-    background-image: linear-gradient(to right, #eb4b3f, #f0945b);
     color: white;
 }
 
