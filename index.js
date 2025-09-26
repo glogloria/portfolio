@@ -3,13 +3,17 @@ filterSelection("all") // initial filter set to all
 function filterSelection(c) {
     let x = document.getElementsByClassName("filterDiv");
     
-    if (c == "all") c = ""; // Sets c = to an empty string so all items match
-
-    for (let i = 0; i < x.length; i++) { // adds or removes the show class based on if the element's class name contains category c
-        removeClass(x[i], "show");
-        removeClass(x[i], "active")
-        if (x[i].className.indexOf(c) > -1) addClass(x[i], "show"); 
+    if (c === "all") {
+        for (let i = 0; i < x.length; i++) {
+            addClass(x[i], "show");
+        }
+    } else {
+        for (let i = 0; i < x.length; i++) { // adds or removes the show class based on if the element's class name contains category c
+            removeClass(x[i], "show");
+            if (x[i].className.indexOf(c) > -1) addClass(x[i], "show"); 
+        }
     }
+     makeBold(c)
 }
 
 // Show filtered elements
@@ -37,26 +41,26 @@ function removeClass(element, name) {
     element.className = arr1.join(" ");
 }
 
-let btnContainer = document.querySelector(".btnContainer");
-let buttons = btnContainer.getElementsByClassName("filterBtn");
-
-for (let i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener('click', function () {
-        let current = btnContainer.querySelector(".active");
-        if (current) {
-            current.classList.remove("active");
+// Bold applied filters
+function makeBold(c) {
+    const buttons = document.getElementsByClassName('filterBtn');
+    
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove('active');
+        if (buttons[i].getAttribute('data-filter') === c) {
+            buttons[i].classList.add('active');
         }
-        buttons[i].className.add("active");
-    });
+    }
 }
 
-function makeBold() {
 
-}
+
 
 // Nav-bar background while scrolling
+const header = document.getElementsByClassName('header')[0];
+
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 0) {
+    if (window.scrollY > 100) {
         header.classList.add('scrolled');
     } else {
         header.classList.remove('scrolled');
@@ -88,7 +92,7 @@ const cards = document.getElementsByClassName("project-card");
 for (let card of cards) {
     card.addEventListener('mouseover', () => {
         card.classList.add('box-shadow');
-    });
+    })
 
     card.addEventListener('mouseout', () => {
         card.classList.remove('box-shadow');
