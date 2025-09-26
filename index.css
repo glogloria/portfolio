@@ -242,7 +242,7 @@ a.github-button:hover {
 
 .project-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-auto-flow: row;
     gap: 50px;
     padding: 20px;
@@ -342,7 +342,7 @@ box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 1
 .about {
     display: flex;
     place-content: center;
-    height: 50vh;
+    height: 40vh;
     color: white;
 }
 
@@ -360,7 +360,7 @@ box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 1
 .headshot {
     display: flex;
     justify-content: center;
-    max-height: 250px;
+    max-height: 200px;
     height: auto;
 }
 
