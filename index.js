@@ -7,6 +7,7 @@ function filterSelection(c) {
 
     for (let i = 0; i < x.length; i++) { // adds or removes the show class based on if the element's class name contains category c
         removeClass(x[i], "show");
+        removeClass(x[i], "active")
         if (x[i].className.indexOf(c) > -1) addClass(x[i], "show"); 
     }
 }
@@ -36,6 +37,23 @@ function removeClass(element, name) {
     element.className = arr1.join(" ");
 }
 
+let btnContainer = document.querySelector(".btnContainer");
+let buttons = btnContainer.getElementsByClassName("filterBtn");
+
+for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', function () {
+        let current = btnContainer.querySelector(".active");
+        if (current) {
+            current.classList.remove("active");
+        }
+        buttons[i].className.add("active");
+    });
+}
+
+function makeBold() {
+
+}
+
 // Nav-bar background while scrolling
 window.addEventListener('scroll', () => {
     if (window.scrollY > 0) {
@@ -45,40 +63,35 @@ window.addEventListener('scroll', () => {
     }
 });
 
+
+
+
+// function makeBold(c) {
+//     let buttons = document.getElementsByClassName("filterDiv");
+
+//     for (let i = 0; i < buttons.length; i++) {
+//         removeClass(buttons[i], "active")
+//     }
+//     addClass(document.activeElement, "active");
+// }
+
 // // Hoempage snowflakes
 // const snowContainer = document.getElementById("snowflake-container");
 // const numSnowflakes = 250;
 // const snowFlakes = [];
 
-// // Generates snowflakes of random sizes
 
-// for (let i = 0; i < numSnowflakes; i++) {
-//     const flake = document.createElement("div");
-//     flake.classList.add("snowflake");
-//     flake.style.left = `${Math.random() * window.innerWidth}px`;
-//     flake.style.top = `${Math.random() * window.innerHeight}px`;
-//     snowContainer.appendChild(flake);
-//     snowFlakes.push(flake);                                      
-// }
+// Turn project-card bold when hovered
 
-// document.addEventListener("mousemove", (e) => {
-//     const mouseX = e.clientX;
-//     const mouseY = e.clientY;
+const cards = document.getElementsByClassName("project-card");
 
-//     snowFlakes.forEach((flake) => {
-//         const rect = flake.getBOundingClientRect();
-//         const dx = rect.left - mouseX;
-//         const dy = rect.top - mouseY;
-//         const distance = Math.sqrt(dx * dx + dy * dy);
+for (let card of cards) {
+    card.addEventListener('mouseover', () => {
+        card.classList.add('box-shadow');
+    });
 
-//         if (distance < 100) {
-//             const angle = Math.atan2(dy, dx);
-//             const moveX = Math.cos(angle) * 30;
-//             const moveY = Math.sin(angle) * 30;
+    card.addEventListener('mouseout', () => {
+        card.classList.remove('box-shadow');
+    });
+}
 
-//             flake.style.transform = `translate(${moveX}px, ${moveY}px)`;
-//         }   else {
-//             flake.style.transform = `translate(0, 0)`;
-//         }
-//     });    
-// });
