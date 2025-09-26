@@ -234,9 +234,13 @@ a.github-button:hover {
     width: auto;
 }
 
+.filter-container {
+    padding: 40px;
+}
+
 .project-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-auto-flow: row;
     gap: 50px;
     padding: 20px;
